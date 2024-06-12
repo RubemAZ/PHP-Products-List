@@ -2,4 +2,4 @@
 A CRUD of products list using PHP
 
 ## How to start:
-    - php -S localhost:8000
+    $ php -S localhost:8000
