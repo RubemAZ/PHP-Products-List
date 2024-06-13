@@ -4,6 +4,13 @@ try {
     $pdo = new PDO('mysql:host=localhost;dbname=product_list', 'root', '456852');
     //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    //Delete Product
+    if (isset($_GET['delete'])) {
+        $id = (int)$_GET['delete'];
+        $pdo->exec("DELETE FROM products WHERE id=$id");
+        echo 'Produto deletado com sucesso'.$id;
+    }
+
     //Checking if the form has been submitted.
     if (isset($_POST['name'])) {
         // Preparing the SQL query.
@@ -22,7 +29,7 @@ try {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
@@ -68,6 +75,22 @@ try {
                 </form>
             </div>
 
+            <div class="card shadow-lg p-5 m-5">
+                <h1>Registro de Produto</h1>
+                <?php
+                    $sql = $pdo->prepare("SELECT * FROM products");
+                    $sql->execute();
+
+                    $fetchProducts = $sql->fetchAll();
+
+                    foreach ($fetchProducts as $key => $value){
+                        echo '<a href="?delete='.$value['id'].'">(X)</a>'.$value['name'].' | '.$value['category'].' | '.$value['description'].' | '.$value['gtin'].' | '.$value['price'];
+                        echo '<hr>';
+                    }
+                ?>
+
+
+            </div>
 
 
         </div>
