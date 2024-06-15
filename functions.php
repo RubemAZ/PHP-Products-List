@@ -1,5 +1,4 @@
 <?php
-// functions.php
 
 function deleteProduct($pdo, $id) {
     $stmt = $pdo->prepare("DELETE FROM products WHERE id = :id");

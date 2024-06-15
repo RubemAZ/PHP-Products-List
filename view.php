@@ -1,5 +1,4 @@
 <?php
-// view.php
 
 function renderForm($product = null) {
     ?>
