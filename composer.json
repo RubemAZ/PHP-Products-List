@@ -1,0 +1,17 @@
+{
+    "name": "raz/php-products-list",
+    "autoload": {
+        "psr-4": {
+            "Raz\\PhpProductsList\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rubem Azevedo",
+            "email": "raz.rubem@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
