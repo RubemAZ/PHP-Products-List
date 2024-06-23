@@ -1,5 +1,5 @@
 <?php
-
+    namespace user\comercial\model;
 function deleteProduct($pdo, $id) {
     $stmt = $pdo->prepare("DELETE FROM products WHERE id = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);

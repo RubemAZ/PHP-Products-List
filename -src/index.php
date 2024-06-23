@@ -1,7 +1,11 @@
 <?php
-require 'db.php';
-require 'functions.php';
-require 'view.php';
+require './model/db.php';
+require './model/functions.php';
+require './model/view.php';
+
+use user\comercial\model\db;
+use user\comercial\model\functions;
+use user\comercial\model\view;
 
 // Deletar Produto
 if (isset($_GET['delete'])) {

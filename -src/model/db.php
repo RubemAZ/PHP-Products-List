@@ -1,5 +1,5 @@
 <?php
-
+    namespace user\comercial\model;
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=product_list', 'root', '456852', [
         // PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

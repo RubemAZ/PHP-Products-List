@@ -1,5 +1,5 @@
 <?php
-
+    namespace user\comercial\model;
 function renderForm($product = null) {
     ?>
     <div class="card shadow-lg p-5 m-5">
